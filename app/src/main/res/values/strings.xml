@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">JewelryShop</string>
+    <string name="boltneve">Diamond Jewelry</string>
+    <string name="diamon">Diamond Jewelry</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="regist">Regisztráció</string>
+    <string name="passwagain">Jelszó újra</string>
+    <string name="password">Jelszó</string>
+    <string name="email">Email cím</string>
+    <string name="username">Felhasználónév</string>
+</resources>
