@@ -10,14 +10,21 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 public class ShopActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private ImageView menuIcon;
+
+    private RecyclerView recyc;
+    private ArrayList<Item> items;
+    private ShoppingAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,5 +63,8 @@ public class ShopActivity extends AppCompatActivity {
                 return false; // Ha másik menüelemre kattintunk, ne tegyünk semmit
             }
         });
+    }
+
+    public void updateAlertIcon() {
     }
 }
