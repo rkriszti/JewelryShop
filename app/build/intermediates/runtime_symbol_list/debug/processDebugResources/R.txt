@@ -3270,6 +3270,7 @@ int id browser_actions_menu_items 0x7f09006b
 int id browser_actions_menu_view 0x7f09006c
 int id buttonPanel 0x7f09006d
 int id buttonSelectImage 0x7f090222
+int id buttonTakePhoto 0x7f090227
 int id cache_measures 0x7f09006e
 int id callMeasure 0x7f09006f
 int id cancel_button 0x7f090070

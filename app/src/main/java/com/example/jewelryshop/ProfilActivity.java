@@ -24,17 +24,20 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.io.File;
 import java.io.IOException;
 
 public class ProfilActivity extends AppCompatActivity {
 
     private ImageView profileImageView;
     private Button buttonSelectImage;
+    private Button buttonTakePhoto;
     private ProfilVM profilViewModel;
 
     private ActivityResultLauncher<String> pickImageLauncher;
-    private ActivityResultLauncher<String> requestPermissionLauncher;
+    private ActivityResultLauncher<String> requestGalleryPermissionLauncher;
+
+    private ActivityResultLauncher<Void> takePictureLauncher;
+    private ActivityResultLauncher<String> requestCameraPermissionLauncher;
 
     private DrawerLayout drawerLayout;
     private ImageView menuIcon;
@@ -55,20 +58,47 @@ public class ProfilActivity extends AppCompatActivity {
         currentEmail = (auth.getCurrentUser() != null) ? auth.getCurrentUser().getEmail() : null;
         if (currentEmail == null) {
             Toast.makeText(this, "Nincs bejelentkezett felhasználó.", Toast.LENGTH_SHORT).show();
-            finish(); // vagy más logika
+            finish();
             return;
         }
 
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.menu_profile) {
+                // Toast.makeText(ShopActivity.this, "Profil oldalra irányít", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ProfilActivity.this, ProfilActivity.class);
+                startActivity(intent);
+                drawerLayout.closeDrawers();
+                return true;
+            } else if (id == R.id.menu_logout) {
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(ProfilActivity.this, "Sikeres kijelentkezés", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(ProfilActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+                return true;
+            }else if (id == R.id.menu_shop) {
+                Intent intent = new Intent(ProfilActivity.this, ShopActivity.class);
+                startActivity(intent);
+                drawerLayout.closeDrawers();
+                return true;
+            }
+            return false;
+        });
 
         // Nézetek inicializálása
         profileImageView = findViewById(R.id.profileImageView);
         buttonSelectImage = findViewById(R.id.buttonSelectImage);
+        buttonTakePhoto = findViewById(R.id.buttonTakePhoto);
         drawerLayout = findViewById(R.id.drawer_layout);
         menuIcon = findViewById(R.id.menu);
         profilViewModel = new ViewModelProvider(this).get(ProfilVM.class);
         profilViewModel.loadProfil(currentEmail);
 
-        // Kép kiválasztása
+        // Galériából kép választása
         pickImageLauncher = registerForActivityResult(
                 new ActivityResultContracts.GetContent(),
                 uri -> {
@@ -84,12 +114,24 @@ public class ProfilActivity extends AppCompatActivity {
                 }
         );
 
-        // Jogosultság kérő launcher
-        requestPermissionLauncher = registerForActivityResult(
+        // Kamera kép készítés launcher (kép visszaadása bitmapként)
+        takePictureLauncher = registerForActivityResult(
+                new ActivityResultContracts.TakePicturePreview(),
+                bitmap -> {
+                    if (bitmap != null) {
+                        profilViewModel.updateProfileImage(currentEmail, bitmap);
+                        Toast.makeText(this, "Kép elkészült a kamerával.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, "Nem készült el a kép.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+
+        // Galéria engedély kérő
+        requestGalleryPermissionLauncher = registerForActivityResult(
                 new ActivityResultContracts.RequestPermission(),
                 isGranted -> {
                     if (isGranted) {
-                        Toast.makeText(this, "Engedély megadva, most már választhatsz képet!", Toast.LENGTH_SHORT).show();
                         pickImageLauncher.launch("image/*");
                     } else {
                         Toast.makeText(this, "Engedély megtagadva, nem tudsz képet választani.", Toast.LENGTH_SHORT).show();
@@ -97,58 +139,58 @@ public class ProfilActivity extends AppCompatActivity {
                 }
         );
 
-        ImageView profileImageView;
-        profileImageView = findViewById(R.id.profileImageView);
-        // Profilkép betöltése Glide-dal
+        // Kamera engedély kérő
+        requestCameraPermissionLauncher = registerForActivityResult(
+                new ActivityResultContracts.RequestPermission(),
+                isGranted -> {
+                    if (isGranted) {
+                        takePictureLauncher.launch(null);
+                    } else {
+                        Toast.makeText(this, "Engedély megtagadva, nem tudsz képet készíteni.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+
+        // Profilkép betöltése Glide-dal vagy alapértelmezett kép
         profilViewModel.getProfilLiveData().observe(this, profil -> {
             if (profil != null && profil.getProfilKepUri() != null) {
                 Bitmap bitmap = BitmapFactory.decodeFile(profil.getProfilKepUri());
                 profileImageView.setImageBitmap(bitmap);
             } else {
-                // alapértelmezett kép, ha nincs profilkép
                 profileImageView.setImageResource(R.drawable.usericon);
             }
         });
 
-
         // Menü ikon eseménykezelése
         menuIcon.setOnClickListener(v -> drawerLayout.openDrawer(findViewById(R.id.navigation_view)));
 
-        // Navigációs menü
-        NavigationView navigationView = findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(item -> {
-            int id = item.getItemId();
-            Intent intent = null;
+        // Navigációs menü kezelése (ugyanaz maradhat)
 
-            if (id == R.id.menu_profile) {
-                intent = new Intent(this, ProfilActivity.class);
-            } else if (id == R.id.menu_logout) {
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(this, "Sikeres kijelentkezés", Toast.LENGTH_SHORT).show();
-                intent = new Intent(this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                finish();
-                return true;
-            } else if (id == R.id.menu_shop) {
-                intent = new Intent(this, ShopActivity.class);
-            }
+        // Gomb események kezelése
 
-            if (intent != null) {
-                startActivity(intent);
-                drawerLayout.closeDrawers();
-                return true;
-            }
-
-            return false;
-        });
-
-        // Gomb eseménykezelő: engedély kérése és képválasztás
+        // Galéria gomb - engedély ellenőrzés + kérés
         buttonSelectImage.setOnClickListener(v -> {
             String permission = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ?
                     Manifest.permission.READ_MEDIA_IMAGES :
                     Manifest.permission.READ_EXTERNAL_STORAGE;
-            requestPermissionLauncher.launch(permission);
+
+            if (checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED) {
+                pickImageLauncher.launch("image/*");
+            } else {
+                requestGalleryPermissionLauncher.launch(permission);
+            }
         });
+
+        // Kamera gomb - engedély ellenőrzés + kérés
+        buttonTakePhoto.setOnClickListener(v -> {
+            String permission = Manifest.permission.CAMERA;
+
+            if (checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED) {
+                takePictureLauncher.launch(null);
+            } else {
+                requestCameraPermissionLauncher.launch(permission);
+            }
+        });
+
     }
 }

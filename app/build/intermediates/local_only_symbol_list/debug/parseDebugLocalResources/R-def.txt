@@ -10,6 +10,7 @@ drawable ic_launcher_foreground
 drawable usericon
 id add_to_cart
 id buttonSelectImage
+id buttonTakePhoto
 id drawer_layout
 id emailedittext2
 id emaillogin
