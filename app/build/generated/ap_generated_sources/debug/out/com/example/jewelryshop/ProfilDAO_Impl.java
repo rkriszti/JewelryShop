@@ -152,13 +152,16 @@ public final class ProfilDAO_Impl implements ProfilDAO {
           final int _cursorIndexOfProfilKepUri = CursorUtil.getColumnIndexOrThrow(_cursor, "profil_kep_uri");
           final Profil _result;
           if(_cursor.moveToFirst()) {
+            _result = new Profil();
             final String _tmpEmail;
             _tmpEmail = _cursor.getString(_cursorIndexOfEmail);
+            _result.setEmail(_tmpEmail);
             final String _tmpNev;
             _tmpNev = _cursor.getString(_cursorIndexOfNev);
+            _result.setNev(_tmpNev);
             final String _tmpProfilKepUri;
             _tmpProfilKepUri = _cursor.getString(_cursorIndexOfProfilKepUri);
-            _result = new Profil(_tmpEmail,_tmpNev,_tmpProfilKepUri);
+            _result.setProfilKepUri(_tmpProfilKepUri);
           } else {
             _result = null;
           }
@@ -187,13 +190,16 @@ public final class ProfilDAO_Impl implements ProfilDAO {
       final int _cursorIndexOfProfilKepUri = CursorUtil.getColumnIndexOrThrow(_cursor, "profil_kep_uri");
       final Profil _result;
       if(_cursor.moveToFirst()) {
+        _result = new Profil();
         final String _tmpEmail;
         _tmpEmail = _cursor.getString(_cursorIndexOfEmail);
+        _result.setEmail(_tmpEmail);
         final String _tmpNev;
         _tmpNev = _cursor.getString(_cursorIndexOfNev);
+        _result.setNev(_tmpNev);
         final String _tmpProfilKepUri;
         _tmpProfilKepUri = _cursor.getString(_cursorIndexOfProfilKepUri);
-        _result = new Profil(_tmpEmail,_tmpNev,_tmpProfilKepUri);
+        _result.setProfilKepUri(_tmpProfilKepUri);
       } else {
         _result = null;
       }
@@ -222,13 +228,16 @@ public final class ProfilDAO_Impl implements ProfilDAO {
       final int _cursorIndexOfProfilKepUri = CursorUtil.getColumnIndexOrThrow(_cursor, "profil_kep_uri");
       final Profil _result;
       if(_cursor.moveToFirst()) {
+        _result = new Profil();
         final String _tmpEmail;
         _tmpEmail = _cursor.getString(_cursorIndexOfEmail);
+        _result.setEmail(_tmpEmail);
         final String _tmpNev;
         _tmpNev = _cursor.getString(_cursorIndexOfNev);
+        _result.setNev(_tmpNev);
         final String _tmpProfilKepUri;
         _tmpProfilKepUri = _cursor.getString(_cursorIndexOfProfilKepUri);
-        _result = new Profil(_tmpEmail,_tmpNev,_tmpProfilKepUri);
+        _result.setProfilKepUri(_tmpProfilKepUri);
       } else {
         _result = null;
       }

@@ -20,6 +20,13 @@ public class Profil {
     @ColumnInfo(name = "profil_kep_uri")
     private String profilKepUri;
 
+    // Paraméter nélküli konstruktor Room miatt (nagyon fontos!)
+    public Profil() {
+        this.email = "";
+        this.nev = "";
+        this.profilKepUri = "";
+    }
+
     public Profil(@NonNull String email, String nev, String profilKepUri) {
         this.email = email;
         this.nev = nev;

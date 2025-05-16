@@ -1,12 +1,17 @@
 package com.example.jewelryshop;
 
 import android.app.Application;
+import android.graphics.Bitmap;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -17,7 +22,6 @@ public class ProfilVM extends AndroidViewModel {
     private ProfilRD db;
     private ExecutorService executorService;
 
-    // Csak egyszer deklaráljuk MutableLiveData-ként:
     private final MutableLiveData<Profil> profilLiveData = new MutableLiveData<>();
 
     public ProfilVM(@NonNull Application application) {
@@ -28,7 +32,6 @@ public class ProfilVM extends AndroidViewModel {
         executorService = Executors.newSingleThreadExecutor();
     }
 
-    // Csak a LiveData interfészt adjuk ki, így csak olvasható kívülről
     public LiveData<Profil> getProfilLiveData() {
         return profilLiveData;
     }
@@ -36,8 +39,8 @@ public class ProfilVM extends AndroidViewModel {
     public void loadProfil(String email) {
         executorService.execute(() -> {
             Profil profil = profilDao.getProfilByEmail(email);
-            profilLiveData.postValue(profil);  // postValue a MutableLiveData-n van, ok
-
+            Log.d("ProfilVM", "Betöltött profilKepUri: " + (profil != null ? profil.getProfilKepUri() : "null"));
+            profilLiveData.postValue(profil);
         });
     }
 
@@ -47,4 +50,31 @@ public class ProfilVM extends AndroidViewModel {
             profilLiveData.postValue(profil);
         });
     }
+
+    public void updateProfileImage(String email, Bitmap bitmap) {
+        executorService.execute(() -> {
+            File imageFile = new File(getApplication().getFilesDir(), email + "_profile.png");
+            try (FileOutputStream fos = new FileOutputStream(imageFile)) {
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+            } catch (IOException e) {
+                e.printStackTrace();
+                return;
+            }
+
+            Profil profil = profilDao.getProfilByEmail(email);
+            if (profil == null) {
+                profil = new Profil(email, "", imageFile.getAbsolutePath());  // üres névvel
+                profilDao.insert(profil);
+            } else {
+                profil.setProfilKepUri(imageFile.getAbsolutePath());
+                profilDao.update(profil);
+            }
+
+            profilLiveData.postValue(profil);
+
+            Log.d("ProfilVM", "Frissített profilKepUri: " + profil.getProfilKepUri());
+        });
+    }
+
+
 }
