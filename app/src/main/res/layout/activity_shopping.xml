@@ -49,6 +49,38 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
+        <Spinner
+            android:id="@+id/spinnerType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/minPrice"
+            android:spinnerMode="dropdown"/>
+
+        <EditText
+            android:id="@+id/minPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Min ár"
+            app:layout_constraintTop_toBottomOf="@id/menu"
+            app:layout_constraintStart_toEndOf="@id/spinnerType"
+            app:layout_constraintEnd_toStartOf="@+id/maxPrice"
+            android:padding="8dp"/>
+
+        <EditText
+            android:id="@+id/maxPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Max ár"
+            app:layout_constraintTop_toBottomOf="@id/menu"
+            app:layout_constraintStart_toEndOf="@id/minPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="8dp"/>
+
+
         <!-- Termékek  ..................................................................... -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycle"

@@ -3455,6 +3455,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id matrix
+id maxPrice
 id menu
 id menu_cart
 id menu_logout
@@ -3462,6 +3463,7 @@ id menu_profile
 id menu_shop
 id message
 id middle
+id minPrice
 id mini
 id month_grid
 id month_navigation_bar
@@ -3555,6 +3557,7 @@ id pressed
 id price
 id profileImageView
 id profileText
+id profilesaying
 id progress_circular
 id progress_horizontal
 id radio
@@ -3613,6 +3616,7 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
+id spinnerType
 id spline
 id split_action_bar
 id spread

@@ -7,8 +7,17 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.MenuItem;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.android.gms.tasks.OnSuccessListener;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -19,6 +28,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ShopActivity extends AppCompatActivity {
 
@@ -26,10 +36,15 @@ public class ShopActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private ImageView menuIcon;
+    private Spinner spinnerType;
+
+
+
 
     private RecyclerView recyc;
     private ArrayList<Item> items;
     private ShoppingAdapter adapter;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private int gridNumber = 2;
 
     @Override
@@ -46,6 +61,28 @@ public class ShopActivity extends AppCompatActivity {
         menuIcon.setOnClickListener(v ->
                 drawerLayout.openDrawer(findViewById(R.id.navigation_view))
         );
+
+
+
+        spinnerType = findViewById(R.id.spinnerType);
+        ArrayAdapter<String> adapterr = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item,
+                new String[]{"nyaklánc", "gyuru", "karkoto"});
+        adapterr.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerType.setAdapter(adapterr);
+
+        // Spinner választás változás
+        spinnerType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                filterProducts();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
+// EditText-ek változásának figyelése (TextWatcher) szintén triggerelheti a filterProducts()-t
+
 
         NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(item -> {
@@ -107,6 +144,8 @@ public class ShopActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+
     private void initializeData() {
         String[] itemss = {"Arany gyűrű", "Ezüst lánc", "Gyémánt fülbevaló"};
         String[] termekleiras = {"Szép gyűrű", "Elegáns lánc", "Csillogó fülbevaló"};
@@ -125,4 +164,75 @@ public class ShopActivity extends AppCompatActivity {
 
     public void updateAlertIcon() {
     }
+
+    private void fetchFilteredItems(String minAr, String tipus) {
+        db.collection("items")
+                .whereGreaterThanOrEqualTo("ar", minAr)
+                .whereEqualTo("Tipus", tipus)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        items.clear();
+                        for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                            String nev = document.getString("nev");
+                            String termekleiras = document.getString("termekleiras");
+                            String ar = document.getString("ar");
+                            String tipusStr = document.getString("Tipus");
+                            Long kep = document.getLong("kep"); // számként tárolod
+
+                            // Átalakítás a saját Item objektumodhoz
+                            Tipus tipusEnum = Tipus.valueOf(tipusStr); // Feltételezem enum van
+
+                            int kepResId = (kep != null) ? kep.intValue() : 0;
+
+                            Item item = new Item(nev, termekleiras, tipusEnum, ar, kepResId);
+                            items.add(item);
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+                })
+                .addOnFailureListener(e -> Log.e("Firestore", "Hiba a lekéréskor", e));
+    }
+
+    private void filterProducts() {
+        String selectedType = spinnerType.getSelectedItem().toString();
+        Tipus selectedTipus = mapSpinnerToEnum(selectedType);
+
+        String minPriceStr = ((EditText) findViewById(R.id.minPrice)).getText().toString();
+        String maxPriceStr = ((EditText) findViewById(R.id.maxPrice)).getText().toString();
+
+        int minPrice = minPriceStr.isEmpty() ? Integer.MIN_VALUE : Integer.parseInt(minPriceStr);
+        int maxPrice = maxPriceStr.isEmpty() ? Integer.MAX_VALUE : Integer.parseInt(maxPriceStr);
+
+        List<Item> filteredList = new ArrayList<>();
+        for (Item p : items) {
+            boolean matchesType = (selectedTipus == null) || p.getTipus() == selectedTipus;
+
+            int price = Integer.parseInt(p.getAr().replaceAll("[^0-9]", ""));
+            boolean matchesPrice = price >= minPrice && price <= maxPrice;
+
+            if (matchesType && matchesPrice) {
+                filteredList.add(p);
+            }
+        }
+
+        adapter.setItemList(filteredList);  // a ShoppingAdapter-ben legyen egy setItemList metódus, ami update-eli a listát
+    }
+
+    private Tipus mapSpinnerToEnum(String selectedType) {
+        switch (selectedType) {
+            case "nyaklanc":
+                return Tipus.NYAKLANC;  // ezt írd át a valós enum értékre!
+            case "gyuru":
+                return Tipus.GYURU;
+            case "karkoto":
+                return Tipus.KARKOTO;
+            default:
+                return null; // minden típus
+        }
+    }
+
+
+
 }

@@ -20,11 +20,13 @@ id loginbutton
 id loginbutton2
 id logo
 id logo2
+id maxPrice
 id menu
 id menu_cart
 id menu_logout
 id menu_profile
 id menu_shop
+id minPrice
 id navigation_view
 id passwordagain2
 id passwordedittext
@@ -32,11 +34,13 @@ id passwordedittext2
 id price
 id profileImageView
 id profileText
+id profilesaying
 id recycle
 id registbutton
 id registbutton2
 id shopName
 id shopName2
+id spinnerType
 id subTitle
 id toolbar
 id usernameedittext2

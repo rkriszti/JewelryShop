@@ -131,5 +131,12 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.ViewHo
             price.setText(item.getAr());
             Glide.with(context).load(item.getKep()).into(image); //image glide-dal
         }
+        void setItemList(List<Item> items){
+            itemList = new ArrayList<>(items);
+            allItems = new ArrayList<>(items);
+            notifyDataSetChanged();
+        }
+
+
     }
 }
