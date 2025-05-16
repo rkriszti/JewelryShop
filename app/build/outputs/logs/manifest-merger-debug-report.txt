@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:2:1-38:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\user\.gradle\caches\8.11.1\transforms\1dcb4696838cf58fb3cd96a7a442ab50\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\user\.gradle\caches\8.11.1\transforms\d292a2901ba956bcdd4848c77f04d813\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\user\.gradle\caches\8.11.1\transforms\022d109d814ef6ddbf7020fd572300ba\transformed\jetified-appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
@@ -84,9 +84,17 @@ MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\user\.gradle\ca
 		INJECTED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:5:5-80
+	android:name
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:5:22-77
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:6:5-76
+	android:name
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:6:22-73
 application
-ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:5:5-30:19
-INJECTED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:5:5-30:19
+ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:9:5-36:19
+INJECTED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:9:5-36:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\user\.gradle\caches\8.11.1\transforms\1dcb4696838cf58fb3cd96a7a442ab50\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\user\.gradle\caches\8.11.1\transforms\1dcb4696838cf58fb3cd96a7a442ab50\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\user\.gradle\caches\8.11.1\transforms\d292a2901ba956bcdd4848c77f04d813\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
@@ -140,53 +148,57 @@ MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\user\.gradle\ca
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.0] C:\Users\user\.gradle\caches\8.11.1\transforms\98b6ca3b6a812e8fe4954039c27c240d\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:14:9-41
 	android:fullBackupContent
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:8:9-54
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:12:9-54
 	android:roundIcon
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:11:9-54
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:15:9-54
 	tools:targetApi
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:14:9-29
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:18:9-29
 	android:icon
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:9:9-43
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:13:9-43
 	android:allowBackup
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:13:9-49
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:17:9-49
 	android:dataExtractionRules
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:7:9-65
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:11:9-65
 activity#com.example.jewelryshop.MainActivity
-ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:16:9-23:20
+ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:20:9-27:20
 	android:exported
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:18:13-36
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:22:13-36
 	android:name
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:17:13-41
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:21:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:19:13-22:29
+ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:23:13-26:29
 action#android.intent.action.MAIN
-ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:20:17-69
+ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:24:17-69
 	android:name
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:20:25-66
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:21:17-77
+ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:21:27-74
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:25:27-74
 activity#com.example.jewelryshop.RegisterActivity
-ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:26:9-77
+ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:30:9-77
 	android:exported
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:26:52-75
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:30:52-75
 	android:name
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:26:19-51
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:30:19-51
 activity#com.example.jewelryshop.ShopActivity
-ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:27:9-28:45
+ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:31:9-32:45
 	android:exported
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:27:48-71
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:31:48-71
 	tools:ignore
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:28:13-42
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:32:13-42
 	android:name
-		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:27:19-47
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:31:19-47
+activity#com.example.jewelryshop.ProfilActivity
+ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:33:9-52
+	android:name
+		ADDED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml:33:19-49
 uses-sdk
 INJECTED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\cygwin64\home\user\JewelryShop\app\src\main\AndroidManifest.xml

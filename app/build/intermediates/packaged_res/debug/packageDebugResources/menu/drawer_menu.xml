@@ -8,6 +8,10 @@
         android:title="Profil"
         android:icon="@drawable/diamondlogo" />
     <item
+        android:id="@+id/menu_shop"
+        android:title="Termékek"
+        android:icon="@drawable/diamondlogo" />
+    <item
         android:id="@+id/menu_logout"
         android:title="Kijelentkezés"
         android:icon="@drawable/diamondlogo" />

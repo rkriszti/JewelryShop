@@ -3031,6 +3031,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable circle_background
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -3158,6 +3159,7 @@ drawable selection_band_overlay
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable usericon
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3268,6 +3270,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id buttonPanel
+id buttonSelectImage
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3455,6 +3458,7 @@ id menu
 id menu_cart
 id menu_logout
 id menu_profile
+id menu_shop
 id message
 id middle
 id mini
@@ -3548,6 +3552,8 @@ id position
 id postLayout
 id pressed
 id price
+id profileImageView
+id profileText
 id progress_circular
 id progress_horizontal
 id radio
@@ -3663,6 +3669,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toolbar
 id top
 id topPanel
 id touch_outside
@@ -3820,6 +3827,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_profil
 layout activity_register
 layout activity_shopping
 layout browser_actions_context_menu_page

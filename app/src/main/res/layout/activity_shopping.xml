@@ -12,6 +12,14 @@
         android:layout_height="match_parent"
         android:background="#AAE0EE">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="Shop"
+            app:titleTextColor="@android:color/white" />
+
         <TextView
             android:id="@+id/shopName"
             android:layout_width="0dp"
@@ -62,4 +70,6 @@
         android:layout_gravity="start"
         android:background="#64B8CA"
     app:menu="@menu/drawer_menu" />
+
+
 </androidx.drawerlayout.widget.DrawerLayout>
