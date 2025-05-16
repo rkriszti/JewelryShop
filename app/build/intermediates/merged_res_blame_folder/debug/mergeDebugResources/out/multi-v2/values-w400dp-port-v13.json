@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.jewelryshop.app-mergeDebugResources-39:/values-w400dp-port-v13/values-w400dp-port-v13.xml",
+            "outputFile": "com.example.jewelryshop.app-mergeDebugResources-42:/values-w400dp-port-v13/values-w400dp-port-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\1dcb4696838cf58fb3cd96a7a442ab50\\transformed\\material-1.12.0\\res\\values-w400dp-port-v13\\values-w400dp-port-v13.xml",

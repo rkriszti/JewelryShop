@@ -29,7 +29,7 @@ public class ShopActivity extends AppCompatActivity {
     private RecyclerView recyc;
     private ArrayList<Item> items;
     private ShoppingAdapter adapter;
-    private int gridNumber = 1;
+    private int gridNumber = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,12 +79,19 @@ public class ShopActivity extends AppCompatActivity {
     }
 
     private void initializeData() {
-        String[] items;
-        String[] termekleiras;
-        String[] ar;
-        Tipus[] tipus;
+        String[] itemss = {"Arany gyűrű", "Ezüst lánc", "Gyémánt fülbevaló"};
+        String[] termekleiras = {"Szép gyűrű", "Elegáns lánc", "Csillogó fülbevaló"};
+        String[] ar = {"15000 Ft", "20000 Ft", "30000 Ft"};
+        Tipus[] tipus = {Tipus.GYURU, Tipus.NYAKLANC, Tipus.FULBEVALO};
+        TypedArray kep = getResources().obtainTypedArray(R.array.image_array); //string.xml
 
+        items.clear();
+        for (int i = 0; i < itemss.length; i++) {
+            items.add(new Item(itemss[i], termekleiras[i], tipus[i], ar[i],  kep.getResourceId(i, 0)));
+        }
 
+        kep.recycle();
+        adapter.notifyDataSetChanged();
     }
 
     public void updateAlertIcon() {

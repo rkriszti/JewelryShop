@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.jewelryshop.app-mergeDebugResources-39:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.example.jewelryshop.app-mergeDebugResources-42:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\93294b6211fe7719eded2abbf5530037\\transformed\\browser-1.4.0\\res\\values-en-rIN\\values-en-rIN.xml",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\dc2fcfdc918b86f1396cdc439b441486\\transformed\\credentials-1.2.0-rc01\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\f7a7901d5d7cb6d497b71effe58879db\\transformed\\jetified-credentials-1.2.0-rc01\\res\\values-en-rIN\\values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

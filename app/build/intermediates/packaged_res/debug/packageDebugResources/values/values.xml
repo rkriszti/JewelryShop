@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <array name="image_array">
+        <item>@drawable/diamondlogo</item>
+        <item>@drawable/diamondlogo</item>
+        <item>@drawable/diamondlogo</item>
+    </array>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">JewelryShop</string>

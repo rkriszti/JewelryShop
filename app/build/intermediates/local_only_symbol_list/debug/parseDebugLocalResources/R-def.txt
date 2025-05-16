@@ -1,13 +1,17 @@
 R_DEF: Internal format may change without notice
 local
+array image_array
 color black
 color white
 drawable diamondlogo
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+id add_to_cart
 id drawer_layout
 id emailedittext2
 id emaillogin
+id itemImage
+id itemTitle
 id loginbutton
 id loginbutton2
 id logo
@@ -20,14 +24,18 @@ id navigation_view
 id passwordagain2
 id passwordedittext
 id passwordedittext2
+id price
+id recycle
 id registbutton
 id registbutton2
 id shopName
 id shopName2
+id subTitle
 id usernameedittext2
 layout activity_main
 layout activity_register
 layout activity_shopping
+layout lista
 menu drawer_menu
 mipmap ic_launcher
 mipmap ic_launcher_round

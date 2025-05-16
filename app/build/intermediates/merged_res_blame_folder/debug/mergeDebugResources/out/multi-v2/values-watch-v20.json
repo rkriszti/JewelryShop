@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.jewelryshop.app-mergeDebugResources-39:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.example.jewelryshop.app-mergeDebugResources-42:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\63790fc1ec8310c1d072894c8741a650\\transformed\\appcompat-1.7.0\\res\\values-watch-v20\\values-watch-v20.xml",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\a97f102fd0dcfcb5d61ecaf63866b55e\\transformed\\play-services-auth-20.7.0\\res\\values-watch-v20\\values.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\07203fac85ca82134d2781dceac95074\\transformed\\jetified-play-services-auth-20.7.0\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",

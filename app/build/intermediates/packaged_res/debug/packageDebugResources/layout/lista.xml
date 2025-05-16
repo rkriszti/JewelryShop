@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:elevation="6dp"
+    app:cardCornerRadius="16dp"
+    android:backgroundTint="@android:color/white">
+
+    <!-- Termék sablon (border)  ..................................................................... -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/itemImage"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+             />
+
+        <TextView
+            android:id="@+id/itemTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Elegáns nyaklánc"
+            android:textSize="18sp"
+            android:textColor="#222222"
+            android:textStyle="bold"
+            android:paddingTop="12dp" />
+
+        <TextView
+            android:id="@+id/subTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="925-ös ezüst, kézzel készült"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:paddingTop="4dp" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="29 990 Ft"
+            android:textColor="#4ACA82"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="end"
+            android:paddingTop="8dp" />
+
+        <Button
+            android:id="@+id/add_to_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kosárba helyezés"
+            android:textAllCaps="false"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#13625C"
+            android:textColor="@android:color/white"
+            android:drawableStart="@drawable/diamondlogo"
+            android:padding="10dp" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.jewelryshop.app-mergeDebugResources-39:/values-v23/values-v23.xml",
+            "outputFile": "com.example.jewelryshop.app-mergeDebugResources-42:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\efa491d7d9b443459c3926d1c5a213ae\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",

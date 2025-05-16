@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.jewelryshop.app-mergeDebugResources-39:/values-sw/values-sw.xml",
+            "outputFile": "com.example.jewelryshop.app-mergeDebugResources-42:/values-sw/values-sw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\63790fc1ec8310c1d072894c8741a650\\transformed\\appcompat-1.7.0\\res\\values-sw\\values-sw.xml",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\5fc6dbff1eb5b7c8bc08449cff6a8afd\\transformed\\play-services-base-18.0.1\\res\\values-sw\\values.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\361e1c122385cf862fe8a1159f1abedb\\transformed\\jetified-play-services-base-18.0.1\\res\\values-sw\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\3b425f70d1c93347336a75dcb4626577\\transformed\\play-services-basement-18.4.0\\res\\values-sw\\values.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\555f40942233cb4579b4a3e960ea598e\\transformed\\jetified-play-services-basement-18.4.0\\res\\values-sw\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -74,7 +74,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\dc2fcfdc918b86f1396cdc439b441486\\transformed\\credentials-1.2.0-rc01\\res\\values-sw\\values-sw.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\f7a7901d5d7cb6d497b71effe58879db\\transformed\\jetified-credentials-1.2.0-rc01\\res\\values-sw\\values-sw.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

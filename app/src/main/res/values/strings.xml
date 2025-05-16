@@ -8,4 +8,10 @@
     <string name="password">Jelszó</string>
     <string name="email">Email cím</string>
     <string name="username">Felhasználónév</string>
+
+    <array name="image_array">
+        <item>@drawable/diamondlogo</item>
+        <item>@drawable/diamondlogo</item>
+        <item>@drawable/diamondlogo</item>
+    </array>
 </resources>

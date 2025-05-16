@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.jewelryshop.app-mergeDebugResources-39:/values-v21/values-v21.xml",
+            "outputFile": "com.example.jewelryshop.app-mergeDebugResources-42:/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\ea5133695720aba08794138433353096\\transformed\\credentials-play-services-auth-1.2.0-rc01\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\63d29b3e4015df238ff750715fa22fd2\\transformed\\jetified-credentials-play-services-auth-1.2.0-rc01\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
