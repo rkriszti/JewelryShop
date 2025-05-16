@@ -4,21 +4,34 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewManager;
 import android.view.animation.LinearInterpolator;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.List;
+
 //Bejelentkező oldal
 public class MainActivity extends AppCompatActivity {
+
+   /* private ItemVM viewmodel;
+    private ShoppingAdapter adapter;
+    private RecyclerView recyclerView;*/
+
     private static final int key = 60;
     private static final String LOG_TAG = MainActivity.class.getName();
 
@@ -53,6 +66,17 @@ public class MainActivity extends AppCompatActivity {
         pref = getSharedPreferences(key2, MODE_PRIVATE);
         fire = FirebaseAuth.getInstance();
 
+        //adapter = new ShoppingAdapter(this, new ArrayList<>());
+       // recyclerView = findViewById(R.id.recyclerView);
+       // recyclerView.setAdapter(adapter);
+
+        /*viewmodel = new ViewModelProvider(this).get(ItemVM.class);
+         viewmodel.getItems().observe(this, new Observer<List<Item>>() {
+             @Override
+             public void onChanged(List<Item> items) {
+                 adapter.setItemList(items);
+             }
+         });*/
         Log.i(LOG_TAG, "onCreate");
 
     }

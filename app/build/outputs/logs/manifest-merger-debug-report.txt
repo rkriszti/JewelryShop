@@ -54,12 +54,15 @@ MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\user
 MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\user\.gradle\caches\8.11.1\transforms\546c0b5046e7d906826f7662de00041a\transformed\fragment-1.5.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.10.1] C:\Users\user\.gradle\caches\8.11.1\transforms\ff2cbbce8aaa7fa246fb7dbd04649b2f\transformed\jetified-activity-1.10.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\efa491d7d9b443459c3926d1c5a213ae\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\user\.gradle\caches\8.11.1\transforms\5bee30f6026a8b609194c2bf0df57271\transformed\room-runtime-2.2.6\AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\2f6b45858384bcfc4f72253c230199f9\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\user\.gradle\caches\8.11.1\transforms\74830be07dc39fb003404cf7a4c50ace\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\user\.gradle\caches\8.11.1\transforms\eb037b3a32772ae7679c210cfed77eef\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\9cb11a6ccc9ab56469f2cb977966ef44\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.15.1] C:\Users\user\.gradle\caches\8.11.1\transforms\4469b734e3d5a7529ede8b3852af91a5\transformed\jetified-gifdecoder-4.15.1\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\user\.gradle\caches\8.11.1\transforms\88932dbf2c7ca585d43f831ca42160c8\transformed\exifinterface-1.3.3\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\user\.gradle\caches\8.11.1\transforms\e1ba59fe1ce76d0cc9b00d9b29b00e51\transformed\sqlite-framework-2.0.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\user\.gradle\caches\8.11.1\transforms\f507c8a6af728a049dff2c0b44a8ac0e\transformed\sqlite-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\cad3d829ee20dc76d675b1d6eebb4542\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\f5a2c7ac430837ce148974e61ffd6e26\transformed\jetified-firebase-components-18.0.0\AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\2497a35512a55cc21a388055e926167a\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -120,6 +123,8 @@ MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\user\.g
 MERGED from [com.google.android.gms:play-services-tasks:18.2.0] C:\Users\user\.gradle\caches\8.11.1\transforms\df8356a503709d7b9ca0a2a67112c23d\transformed\jetified-play-services-tasks-18.2.0\AndroidManifest.xml:4:5-20
 MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\user\.gradle\caches\8.11.1\transforms\555f40942233cb4579b4a3e960ea598e\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
 MERGED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\user\.gradle\caches\8.11.1\transforms\555f40942233cb4579b4a3e960ea598e\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:5:5-7:19
+MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\user\.gradle\caches\8.11.1\transforms\5bee30f6026a8b609194c2bf0df57271\transformed\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
+MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\user\.gradle\caches\8.11.1\transforms\5bee30f6026a8b609194c2bf0df57271\transformed\room-runtime-2.2.6\AndroidManifest.xml:24:5-29:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\user\.gradle\caches\8.11.1\transforms\74830be07dc39fb003404cf7a4c50ace\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\user\.gradle\caches\8.11.1\transforms\74830be07dc39fb003404cf7a4c50ace\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\user\.gradle\caches\8.11.1\transforms\eb037b3a32772ae7679c210cfed77eef\transformed\jetified-startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
@@ -286,6 +291,8 @@ MERGED from [androidx.activity:activity:1.10.1] C:\Users\user\.gradle\caches\8.1
 MERGED from [androidx.activity:activity:1.10.1] C:\Users\user\.gradle\caches\8.11.1\transforms\ff2cbbce8aaa7fa246fb7dbd04649b2f\transformed\jetified-activity-1.10.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\efa491d7d9b443459c3926d1c5a213ae\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\efa491d7d9b443459c3926d1c5a213ae\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\user\.gradle\caches\8.11.1\transforms\5bee30f6026a8b609194c2bf0df57271\transformed\room-runtime-2.2.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.6] C:\Users\user\.gradle\caches\8.11.1\transforms\5bee30f6026a8b609194c2bf0df57271\transformed\room-runtime-2.2.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\2f6b45858384bcfc4f72253c230199f9\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\2f6b45858384bcfc4f72253c230199f9\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\user\.gradle\caches\8.11.1\transforms\74830be07dc39fb003404cf7a4c50ace\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:21:5-44
@@ -298,6 +305,10 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.15.1] C:\Users\user\.gradle\
 MERGED from [com.github.bumptech.glide:gifdecoder:4.15.1] C:\Users\user\.gradle\caches\8.11.1\transforms\4469b734e3d5a7529ede8b3852af91a5\transformed\jetified-gifdecoder-4.15.1\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\user\.gradle\caches\8.11.1\transforms\88932dbf2c7ca585d43f831ca42160c8\transformed\exifinterface-1.3.3\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\user\.gradle\caches\8.11.1\transforms\88932dbf2c7ca585d43f831ca42160c8\transformed\exifinterface-1.3.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\user\.gradle\caches\8.11.1\transforms\e1ba59fe1ce76d0cc9b00d9b29b00e51\transformed\sqlite-framework-2.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\user\.gradle\caches\8.11.1\transforms\e1ba59fe1ce76d0cc9b00d9b29b00e51\transformed\sqlite-framework-2.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\user\.gradle\caches\8.11.1\transforms\f507c8a6af728a049dff2c0b44a8ac0e\transformed\sqlite-2.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\user\.gradle\caches\8.11.1\transforms\f507c8a6af728a049dff2c0b44a8ac0e\transformed\sqlite-2.0.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\cad3d829ee20dc76d675b1d6eebb4542\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\cad3d829ee20dc76d675b1d6eebb4542\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-components:18.0.0] C:\Users\user\.gradle\caches\8.11.1\transforms\f5a2c7ac430837ce148974e61ffd6e26\transformed\jetified-firebase-components-18.0.0\AndroidManifest.xml:18:5-44
@@ -546,6 +557,14 @@ ADDED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\user\
 		ADDED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\user\.gradle\caches\8.11.1\transforms\555f40942233cb4579b4a3e960ea598e\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
 	android:name
 		ADDED from [com.google.android.gms:play-services-basement:18.4.0] C:\Users\user\.gradle\caches\8.11.1\transforms\555f40942233cb4579b4a3e960ea598e\transformed\jetified-play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\user\.gradle\caches\8.11.1\transforms\5bee30f6026a8b609194c2bf0df57271\transformed\room-runtime-2.2.6\AndroidManifest.xml:25:9-28:40
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\user\.gradle\caches\8.11.1\transforms\5bee30f6026a8b609194c2bf0df57271\transformed\room-runtime-2.2.6\AndroidManifest.xml:28:13-37
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\user\.gradle\caches\8.11.1\transforms\5bee30f6026a8b609194c2bf0df57271\transformed\room-runtime-2.2.6\AndroidManifest.xml:27:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.2.6] C:\Users\user\.gradle\caches\8.11.1\transforms\5bee30f6026a8b609194c2bf0df57271\transformed\room-runtime-2.2.6\AndroidManifest.xml:26:13-74
 meta-data#androidx.profileinstaller.ProfileInstallerInitializer
 ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] C:\Users\user\.gradle\caches\8.11.1\transforms\74830be07dc39fb003404cf7a4c50ace\transformed\jetified-profileinstaller-1.4.0\AndroidManifest.xml:29:13-31:52
 	android:value

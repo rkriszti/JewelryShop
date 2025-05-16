@@ -4,8 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -15,9 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.ViewHolder> implements Filterable {
 
+    private final LayoutInflater mInflater;
+    private List<Item> mItems; // Cached copy of words
     private ArrayList<Item> itemList = new ArrayList<>();
     private ArrayList<Item> allItems = new ArrayList<>();
     private Context context;
@@ -28,13 +29,17 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.ViewHo
         this.itemList = items;
         this.allItems = new ArrayList<>(items);
         this.context = context;
+        mInflater = LayoutInflater.from(context);
     }
 
     @Override
     //hozzákapcsoljuk a lista.xml-t az adapterhez
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.lista, parent, false));
+        View itemView = mInflater.inflate(R.layout.lista, parent, false);
+        return new ViewHolder(itemView);
     }
+
+
 
     @Override
     public void onBindViewHolder(ShoppingAdapter.ViewHolder holder, int position) {
@@ -47,6 +52,12 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.ViewHo
             holder.itemView.startAnimation(animation);
             lastPosition = holder.getAdapterPosition();
         }*/
+    }
+
+    void setItemList(List<Item> items){
+        itemList = new ArrayList<>(items);
+        allItems = new ArrayList<>(items);  // hogy a filter is frissüljön
+        notifyDataSetChanged();
     }
 
     @Override
@@ -117,7 +128,7 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.ViewHo
         void bindTo(Item item) {
             title.setText(item.getNev());
             description.setText(item.getTermekleiras() + "\nTípus: " + item.getTipus().name()); //enum!!!
-            price.setText(item.getPrice());
+            price.setText(item.getAr());
             Glide.with(context).load(item.getKep()).into(image); //image glide-dal
         }
     }

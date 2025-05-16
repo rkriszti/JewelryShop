@@ -160,4 +160,10 @@ public class RegisterActivity  extends AppCompatActivity {
         Log.i(LOG_TAG, "onRestart");
     }
 
+    public void login2(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+
 }
