@@ -45,6 +45,7 @@ id spinnerType
 id subTitle
 id toolbar
 id usernameedittext2
+layout activity_cart
 layout activity_main
 layout activity_profil
 layout activity_register

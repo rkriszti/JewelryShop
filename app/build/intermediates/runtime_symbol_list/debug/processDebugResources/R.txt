@@ -3831,6 +3831,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0c0018
 int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
+int layout activity_cart 0x7f0c0072
 int layout activity_main 0x7f0c001c
 int layout activity_profil 0x7f0c001d
 int layout activity_register 0x7f0c001e

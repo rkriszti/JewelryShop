@@ -105,7 +105,12 @@ public class ShopActivity extends AppCompatActivity {
                 finish();
                 return true;
             }else if (id == R.id.menu_shop) {
-                Intent intent = new Intent(ShopActivity.this, ShopActivity.class);
+            Intent intent = new Intent(ShopActivity.this, ShopActivity.class);
+            startActivity(intent);
+            drawerLayout.closeDrawers();
+            return true;
+        }else if (id == R.id.menu_cart) {
+                Intent intent = new Intent(ShopActivity.this, CartActivity.class);
                 startActivity(intent);
                 drawerLayout.closeDrawers();
                 return true;

@@ -44,6 +44,10 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.11.1\\com.example.jewelryshop.app-main-46:\\layout\\lista.xml"
     },
     {
+        "merged": "com.example.jewelryshop.app-debug-44:/layout_activity_cart.xml.flat",
+        "source": "com.example.jewelryshop.app-main-46:/layout/activity_cart.xml"
+    },
+    {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.11.1\\com.example.jewelryshop.app-debug-44:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.11.1\\com.example.jewelryshop.app-main-46:\\mipmap-hdpi\\ic_launcher.webp"
     },
@@ -52,8 +56,8 @@
         "source": "C:\\Users\\user\\.gradle\\daemon\\8.11.1\\com.example.jewelryshop.app-main-46:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.jewelryshop.app-debug-44:/layout_activity_profil.xml.flat",
-        "source": "com.example.jewelryshop.app-main-46:/layout/activity_profil.xml"
+        "merged": "C:\\Users\\user\\.gradle\\daemon\\8.11.1\\com.example.jewelryshop.app-debug-44:\\layout_activity_cart.xml.flat",
+        "source": "C:\\Users\\user\\.gradle\\daemon\\8.11.1\\com.example.jewelryshop.app-main-46:\\layout\\activity_cart.xml"
     },
     {
         "merged": "C:\\Users\\user\\.gradle\\daemon\\8.11.1\\com.example.jewelryshop.app-debug-44:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",

@@ -10,6 +10,7 @@
 
     <!-- Engedélyek -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
@@ -56,9 +57,14 @@
             android:name="com.example.jewelryshop.RegisterActivity"
             android:exported="true" />
         <activity
+            android:name="com.example.jewelryshop.CartActivity"
+            android:exported="true" />
+        <activity
             android:name="com.example.jewelryshop.ShopActivity"
             android:exported="true" />
         <activity android:name="com.example.jewelryshop.ProfilActivity" />
+
+        <receiver android:name="com.example.jewelryshop.AlarmReceiver" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

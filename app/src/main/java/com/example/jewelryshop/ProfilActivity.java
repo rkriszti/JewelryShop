@@ -8,8 +8,17 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.widget.Button;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import androidx.core.app.NotificationCompat;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -83,6 +92,11 @@ public class ProfilActivity extends AppCompatActivity {
                 return true;
             }else if (id == R.id.menu_shop) {
                 Intent intent = new Intent(ProfilActivity.this, ShopActivity.class);
+                startActivity(intent);
+                drawerLayout.closeDrawers();
+                return true;
+            }else if (id == R.id.menu_cart) {
+                Intent intent = new Intent(ProfilActivity.this, CartActivity.class);
                 startActivity(intent);
                 drawerLayout.closeDrawers();
                 return true;
@@ -221,5 +235,46 @@ public class ProfilActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Nincs bejelentkezett felhasználó.", Toast.LENGTH_SHORT).show();
         }
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        profilViewModel.loadProfil(currentEmail);
+        showNotification();
+        startAlarm();
+
+
+    }
+
+    private void showNotification() {
+        String channelId = "profil_channel";
+        String channelName = "Profil értesítések";
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_DEFAULT);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId)
+                .setSmallIcon(R.drawable.usericon)
+                .setContentTitle("Profil")
+                .setContentText("Üdv a profilodban!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true);
+
+        notificationManager.notify(1, builder.build());
+    }
+    private void startAlarm() {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        Intent intent = new Intent(this, AlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+        // Ismétlődő alarm 1 percenként (60000 ms)
+        alarmManager.setRepeating(
+                AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                SystemClock.elapsedRealtime() + 60000,
+                60000,
+                pendingIntent);
     }
 }
