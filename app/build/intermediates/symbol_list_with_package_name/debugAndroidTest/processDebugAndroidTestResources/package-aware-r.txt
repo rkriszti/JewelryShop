@@ -1,0 +1,3 @@
+com.example.jewelryshop.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

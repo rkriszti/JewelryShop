@@ -1,0 +1,5 @@
+com.example.jewelryshop.test.app-jetified-core-1.6.1-0 C:\Users\user\.gradle\caches\8.11.1\transforms\4f00a94478d471e497992571c8c109bd\transformed\jetified-core-1.6.1\res
+com.example.jewelryshop.test.app-androidTest-1 C:\cygwin64\home\user\JewelryShop\app\build\generated\res\resValues\androidTest\debug
+com.example.jewelryshop.test.app-mergeDebugAndroidTestResources-2 C:\cygwin64\home\user\JewelryShop\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.jewelryshop.test.app-mergeDebugAndroidTestResources-3 C:\cygwin64\home\user\JewelryShop\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.jewelryshop.test.app-debugAndroidTest-4 C:\cygwin64\home\user\JewelryShop\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

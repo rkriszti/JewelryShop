@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -71,6 +73,15 @@ public class ProfilActivity extends AppCompatActivity {
             finish();
             return;
         }
+
+
+        profileImageView = findViewById(R.id.profileImageView);
+
+        // Animáció betöltése
+        Animation pulseAnimation = AnimationUtils.loadAnimation(this, R.anim.pulse);
+
+        // Animáció elindítása a profilképen
+        profileImageView.startAnimation(pulseAnimation);
 
         NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(item -> {
