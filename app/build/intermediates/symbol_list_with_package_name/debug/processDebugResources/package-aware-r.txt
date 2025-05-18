@@ -3269,6 +3269,7 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id buttonDeleteProfile
 id buttonPanel
 id buttonSelectImage
 id buttonTakePhoto

@@ -42,6 +42,7 @@ public class ProfilActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ImageView menuIcon;
     private String currentEmail;
+    private Button buttonDeleteProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +89,12 @@ public class ProfilActivity extends AppCompatActivity {
             }
             return false;
         });
+        buttonDeleteProfile = findViewById(R.id.buttonDeleteProfile);
+
+        buttonDeleteProfile.setOnClickListener(v -> {
+            deleteUserProfile();
+        });
+
 
         // Nézetek inicializálása
         profileImageView = findViewById(R.id.profileImageView);
@@ -192,5 +199,27 @@ public class ProfilActivity extends AppCompatActivity {
             }
         });
 
+
+
+    }
+    private void deleteUserProfile() {
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() != null) {
+            auth.getCurrentUser().delete()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(ProfilActivity.this, "Profil törölve.", Toast.LENGTH_SHORT).show();
+                            // Vissza a bejelentkező képernyőre
+                            Intent intent = new Intent(ProfilActivity.this, MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(ProfilActivity.this, "Sikertelen törlés: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
+        } else {
+            Toast.makeText(this, "Nincs bejelentkezett felhasználó.", Toast.LENGTH_SHORT).show();
+        }
     }
 }

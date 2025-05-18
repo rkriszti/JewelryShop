@@ -3268,6 +3268,7 @@ int id browser_actions_menu_item_icon 0x7f090069
 int id browser_actions_menu_item_text 0x7f09006a
 int id browser_actions_menu_items 0x7f09006b
 int id browser_actions_menu_view 0x7f09006c
+int id buttonDeleteProfile 0x7f09022c
 int id buttonPanel 0x7f09006d
 int id buttonSelectImage 0x7f09006e
 int id buttonTakePhoto 0x7f09006f

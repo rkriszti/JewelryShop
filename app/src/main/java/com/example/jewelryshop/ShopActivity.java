@@ -7,6 +7,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.MenuItem;
+
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -233,6 +235,86 @@ public class ShopActivity extends AppCompatActivity {
         }
     }
 
+    // 1. Lekérdezés: Szűrés tipus alapján, ár szerint rendezve növekvő sorrendben, limitálva az első 5 találatra
+    private void queryTypeOrderByPriceLimit() {
+        db.collection("items")
+                .whereEqualTo("Tipus", "NYAKLANC")         // szűrés tipusra
+                .orderBy("ar")                             // rendezés ár szerint (növekvő)
+                .limit(5)                                 // legfeljebb 5 elem
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    items.clear();
+                    for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                        addItemFromDocument(document);
+                    }
+                    adapter.notifyDataSetChanged();
+                })
+                .addOnFailureListener(e -> Log.e("Firestore", "Error in queryTypeOrderByPriceLimit", e));
+    }
+
+    // 2. Lekérdezés: Ár intervallum, tipus szűréssel, ár szerint csökkenő rendezés, léptetéssel (pagination)
+    private DocumentSnapshot lastVisibleDoc = null;  // a lapozáshoz
+
+    private void queryPriceRangeWithPagination(int minPrice, int maxPrice, String tipus, boolean nextPage) {
+        com.google.firebase.firestore.Query query = db.collection("items")
+                .whereGreaterThanOrEqualTo("ar", minPrice)
+                .whereLessThanOrEqualTo("ar", maxPrice)
+                .whereEqualTo("Tipus", tipus)
+                .orderBy("ar", com.google.firebase.firestore.Query.Direction.DESCENDING)
+                .limit(5);
+
+        if (nextPage && lastVisibleDoc != null) {
+            query = query.startAfter(lastVisibleDoc);
+        }
+
+        query.get().addOnSuccessListener(queryDocumentSnapshots -> {
+            if (!queryDocumentSnapshots.isEmpty()) {
+                lastVisibleDoc = queryDocumentSnapshots.getDocuments()
+                        .get(queryDocumentSnapshots.size() - 1);
+                items.clear();
+                for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                    addItemFromDocument(document);
+                }
+                adapter.notifyDataSetChanged();
+            } else {
+                Toast.makeText(this, "Nincs több elem", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(e -> Log.e("Firestore", "Error in queryPriceRangeWithPagination", e));
+    }
+
+    // 3. Lekérdezés: Szűrés egy szöveges mező (termekleiras) alapján, rendezés ár szerint növekvő, limitálás
+    private void queryDescriptionContainsAndOrderByPrice(String searchTerm) {
+        db.collection("items")
+                .whereGreaterThanOrEqualTo("termekleiras", searchTerm)
+                .whereLessThanOrEqualTo("termekleiras", searchTerm + '\uf8ff')
+                .orderBy("termekleiras")
+                .orderBy("ar")
+                .limit(10)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    items.clear();
+                    for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                        addItemFromDocument(document);
+                    }
+                    adapter.notifyDataSetChanged();
+                })
+                .addOnFailureListener(e -> Log.e("Firestore", "Error in queryDescriptionContainsAndOrderByPrice", e));
+    }
+
+    // Segédfüggvény az Item objektum létrehozásához dokumentumból
+    private void addItemFromDocument(QueryDocumentSnapshot document) {
+        String nev = document.getString("nev");
+        String termekleiras = document.getString("termekleiras");
+        String ar = document.getString("ar");
+        String tipusStr = document.getString("Tipus");
+        Long kep = document.getLong("kep");
+
+        Tipus tipusEnum = Tipus.valueOf(tipusStr);
+        int kepResId = (kep != null) ? kep.intValue() : 0;
+
+        Item item = new Item(nev, termekleiras, tipusEnum, ar, kepResId);
+        items.add(item);
+    }
 
 
 }
